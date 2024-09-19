@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: rgb(20, 19, 19);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      form {
+        display: flex;
+        width: 50%;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+
+      input {
+        border: none;
+        border-bottom: white solid 1px;
+        background-color: rgb(20, 19, 19);
+        color: green;
+        width: 40%;
+      }
+      .btn {
+        padding: 5px;
+        background-color: rgb(20, 19, 19);
+        color: green;
+        border: green 1px solid;
+        transition: 500ms ease;
+      }
+      .btn:hover {
+        color: rgb(20, 19, 19);
+        background: green;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <input type="text" id="text" placeholder="enter your text here" />
+      <button class="btn" id="btn">To Speak</button>
+    </form>
+    <script>
+      function tospeak() {
+        var text = document.getElementById("text").value;
+        var voice = new SpeechSynthesisUtterance(text);
+        speechSynthesis.speak(voice);
+      }
+      let btn = document.getElementById("btn");
+      btn.addEventListener("click", tospeak);
+      let element = document.getElementById("text");
+      element.addEventListener('focus',function(){
+        element.style.padding='10px';
+        element.style.border='solid 1px green';
+      })
+    </script>
+  </body>
+</html>
