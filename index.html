@@ -19,10 +19,15 @@
       }
       form {
         display: flex;
-        width: 50%;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 20px;
+        border: solid 2px gray;
+        padding: 25px 15px;
+        border-radius: 10px;
+        width: 90%;
+        max-width: 600px;
       }
 
       input {
@@ -30,7 +35,7 @@
         border-bottom: white solid 1px;
         background-color: rgb(20, 19, 19);
         color: green;
-        width: 40%;
+        width: 100%;
       }
       .btn {
         padding: 5px;
@@ -59,10 +64,10 @@
       let btn = document.getElementById("btn");
       btn.addEventListener("click", tospeak);
       let element = document.getElementById("text");
-      element.addEventListener('focus',function(){
-        element.style.padding='10px';
-        element.style.border='solid 1px green';
-      })
+      element.addEventListener("focus", function () {
+        element.style.padding = "10px";
+        element.style.border = "solid 1px green";
+      });
     </script>
   </body>
 </html>
